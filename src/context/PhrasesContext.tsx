@@ -1,9 +1,6 @@
 import React, { createContext, useContext, useState, PropsWithChildren } from "react";
-
-export type Phrase = {
-  id: string;
-  text: string;
-};
+import { Phrase } from "../interfaces";
+import { phrasesMock } from "../mocks/phrasesMock";
 
 type PhrasesContextType = {
   phrases: Phrase[];
@@ -15,7 +12,7 @@ type PhrasesContextType = {
 const PhrasesContext = createContext<PhrasesContextType | null>(null);
 
 export const PhrasesProvider: React.FC<PropsWithChildren> = ({ children }) => {
-  const [phrases, setPhrases] = useState<Phrase[]>([]);
+  const [phrases, setPhrases] = useState<Phrase[]>(phrasesMock);
 
   const addPhrase = (text: string) => {
     const newPhrase = { id: crypto.randomUUID(), text };
@@ -29,7 +26,14 @@ export const PhrasesProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const clearPhrases = () => setPhrases([]);
 
   return (
-    <PhrasesContext.Provider value={{ phrases, addPhrase, removePhrase, clearPhrases }}>
+    <PhrasesContext.Provider
+      value={{
+        phrases,
+        addPhrase,
+        removePhrase,
+        clearPhrases,
+      }}
+    >
       {children}
     </PhrasesContext.Provider>
   );
