@@ -1,13 +1,9 @@
-import AppToolbar from "./layout/Toolbar/AppToolbar";
-import Footer from "./layout/Footer/Footer";
+import AppRoutes from "./routes/AppRoutes";
 
 const App = () => {
 
   return (
-    <div>
-      <AppToolbar search="" onSearchChange={() => { }} />
-      <Footer />
-    </div>
+    <AppRoutes />
   );
 }
 
