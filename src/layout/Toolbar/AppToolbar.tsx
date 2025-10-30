@@ -23,9 +23,17 @@ const AppToolbar: React.FC<Props> = ({ search, onSearchChange }) => {
   const handleClear = () => onSearchChange("");
 
   return (
-    <AppBar position="static" color="default" elevation={1} className="appbar">
+    <AppBar
+      position="static"
+      elevation={1}
+    >
       <Toolbar className="toolbar">
-        <Typography variant="h6" component="h1" className="title" noWrap>
+        <Typography
+          variant="h6"
+          component="h1"
+          className="title"
+          sx={{ color: "text.primary", fontWeight: 700 }}
+        >
           {t("appTitle")}
         </Typography>
 
@@ -39,19 +47,25 @@ const AppToolbar: React.FC<Props> = ({ search, onSearchChange }) => {
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
-                  <SearchIcon fontSize="small" />
+                  <SearchIcon fontSize="small" color="action" />
                 </InputAdornment>
               ),
               endAdornment: search ? (
                 <InputAdornment position="end">
-                  <IconButton aria-label="clear search" onClick={handleClear} edge="end">
-                    <ClearIcon fontSize="small" />
+                  <IconButton
+                    aria-label="clear search"
+                    onClick={handleClear}
+                    edge="end"
+                    size="small"
+                  >
+                    <ClearIcon fontSize="small" color="action" />
                   </IconButton>
                 </InputAdornment>
               ) : null,
             }}
           />
         </Box>
+
         <LangSwitcher />
       </Toolbar>
     </AppBar>

@@ -3,8 +3,11 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { PhrasesProvider } from "./context/PhrasesContext"; 
+import { PhrasesProvider } from "./context/PhrasesContext";
 import "./i18n";
+import CssBaseline from "@mui/material/CssBaseline";
+import { ThemeProvider } from "@emotion/react";
+import theme from "./theme";
 
 const container = document.getElementById("root");
 if (!container) {
@@ -15,9 +18,12 @@ const root = ReactDOM.createRoot(container);
 
 root.render(
   <React.StrictMode>
-    <PhrasesProvider>
-      <App />
-    </PhrasesProvider>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <PhrasesProvider>
+        <App />
+      </PhrasesProvider>
+    </ThemeProvider>
   </React.StrictMode>
 );
 
