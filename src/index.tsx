@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { PhrasesProvider } from "./context/PhrasesContext"; 
+import "./i18n";
 
 const container = document.getElementById("root");
 if (!container) {
