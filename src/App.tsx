@@ -1,13 +1,10 @@
-import { useTranslation } from "react-i18next";
-import { LangSwitcher } from "./components/LangSwitcher/LangSwitcher";
+import AppToolbar from "./layout/Toolbar/AppToolbar";
 
 const App = () => {
-  const { t } = useTranslation();
 
   return (
     <div>
-      <LangSwitcher />
-      <h1>{t("appTitle")}</h1>
+      <AppToolbar search="" onSearchChange={() => {}} />
     </div>
   );
 }

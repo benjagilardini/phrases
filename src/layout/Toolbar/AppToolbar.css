@@ -1,0 +1,16 @@
+.toolbar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  font-weight: 700;
+  color: #111;
+  width: 10%;
+}
+
+.searchBox {
+  width: 50%;
+}
