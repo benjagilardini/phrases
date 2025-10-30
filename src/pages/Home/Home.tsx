@@ -1,21 +1,16 @@
 import React from "react";
-import { Card, CardContent, Typography, Box } from "@mui/material";
+import { Box } from "@mui/material";
 import { Phrase } from "../../interfaces";
 import { usePhrases } from "../../context/PhrasesContext";
+import PhraseCard from "../../components/PhraseCard/PhraseCard";
 
 const Home: React.FC = () => {
   const { phrases } = usePhrases();
 
   return (
-    <Box sx={{ padding: 2, display: "grid", gap: 2 }}>
+    <Box sx={{ padding: 2, display: "grid", gap: 2, p: 2 }}>
       {phrases.map((phrase: Phrase) => (
-        <Card key={phrase.id} sx={{ backgroundColor: "background.paper", boxShadow: 1 }}>
-          <CardContent>
-            <Typography variant="body1" sx={{ color: "text.primary" }}>
-              {phrase.text}
-            </Typography>
-          </CardContent>
-        </Card>
+        <PhraseCard key={phrase.id} phrase={phrase} />
       ))}
     </Box>
   );

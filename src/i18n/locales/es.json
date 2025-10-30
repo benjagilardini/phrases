@@ -3,5 +3,10 @@
   "placeholder": "Buscar frase",
   "footer": {
     "rights": "Todos los derechos reservados"
+  },
+  "notFound": {
+    "subtitle": "¡Ups! Parece que te perdiste.",
+    "description": "La página que buscas no existe o fue movida. No te preocupes, podés volver al inicio.",
+    "button": "Volver al inicio"
   }
 }
