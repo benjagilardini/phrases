@@ -1,10 +1,12 @@
 import AppToolbar from "./layout/Toolbar/AppToolbar";
+import Footer from "./layout/Footer/Footer";
 
 const App = () => {
 
   return (
     <div>
-      <AppToolbar search="" onSearchChange={() => {}} />
+      <AppToolbar search="" onSearchChange={() => { }} />
+      <Footer />
     </div>
   );
 }

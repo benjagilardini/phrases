@@ -1,4 +1,7 @@
 {
   "appTitle": "Phrases App",
-  "placeholder": "Search phrases"
+  "placeholder": "Search phrases",
+  "footer": {
+    "rights": "All rights reserved"
+  }
 }

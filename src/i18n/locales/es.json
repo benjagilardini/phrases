@@ -1,4 +1,7 @@
 {
   "appTitle": "Frases App",
-  "placeholder": "Buscar frase"
+  "placeholder": "Buscar frase",
+  "footer": {
+    "rights": "Todos los derechos reservados"
+  }
 }
