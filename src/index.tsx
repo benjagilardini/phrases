@@ -8,6 +8,7 @@ import "./i18n";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider } from "@emotion/react";
 import theme from "./theme";
+import { FiltersProvider } from "./context/FiltersContext";
 
 const container = document.getElementById("root");
 if (!container) {
@@ -20,9 +21,11 @@ root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <PhrasesProvider>
-        <App />
-      </PhrasesProvider>
+      <FiltersProvider>
+        <PhrasesProvider>
+          <App />
+        </PhrasesProvider>
+      </FiltersProvider>
     </ThemeProvider>
   </React.StrictMode>
 );

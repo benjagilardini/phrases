@@ -17,9 +17,17 @@
     "authorPlaceholder": "Pick an author or type a new one",
     "addButton": "Add phrase",
     "clearButton": "Clear",
-    "me": "Me"
+    "me": "Me",
+    "expand": "Show form",
+    "collapse": "Hide form"
   },
   "phrases": {
-    "empty": "There are no phrases yet — create your first one!"
+    "empty": "There are no phrases yet — create your first one!",
+    "emptyHint": "Use the form to add your first phrase.",
+    "noResults": "No results",
+    "tryClear": "Try clearing the filter or adjust your search."
+  },
+  "filters": {
+    "clear": "Clear filters"
   }
 }

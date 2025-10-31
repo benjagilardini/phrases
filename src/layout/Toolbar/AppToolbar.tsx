@@ -10,40 +10,27 @@ import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
 import ClearIcon from "@mui/icons-material/Clear";
 import { LangSwitcher } from "../../components/LangSwitcher/LangSwitcher";
+import { useFilters } from "../../context/FiltersContext";
 import "./AppToolbar.css";
 
-type Props = {
-  search: string;
-  onSearchChange: (value: string) => void;
-};
-
-const AppToolbar: React.FC<Props> = ({ search, onSearchChange }) => {
+const AppToolbar: React.FC = () => {
   const { t } = useTranslation();
-
-  const handleClear = () => onSearchChange("");
+  const { search, setSearch } = useFilters();
 
   return (
-    <AppBar
-      position="static"
-      elevation={1}
-    >
+    <AppBar position="static" elevation={1}>
       <Toolbar className="toolbar">
-        <Typography
-          variant="h6"
-          component="h1"
-          className="title"
-          sx={{ color: "text.primary", fontWeight: 700 }}
-        >
+        <Typography variant="h6" component="h1" className="title">
           {t("appTitle")}
         </Typography>
 
         <Box className="searchBox">
           <TextField
-            size="small"
             value={search}
-            onChange={(e) => onSearchChange(e.target.value)}
+            onChange={(e) => setSearch(e.target.value)}
             placeholder={t("placeholder")}
             fullWidth
+            size="small"
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
@@ -54,7 +41,7 @@ const AppToolbar: React.FC<Props> = ({ search, onSearchChange }) => {
                 <InputAdornment position="end">
                   <IconButton
                     aria-label="clear search"
-                    onClick={handleClear}
+                    onClick={() => setSearch("")}
                     edge="end"
                     size="small"
                   >
@@ -66,7 +53,9 @@ const AppToolbar: React.FC<Props> = ({ search, onSearchChange }) => {
           />
         </Box>
 
-        <LangSwitcher />
+        <div className="langBox">
+          <LangSwitcher />
+        </div>
       </Toolbar>
     </AppBar>
   );

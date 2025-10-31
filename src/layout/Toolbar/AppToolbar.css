@@ -1,13 +1,30 @@
 .toolbar {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto minmax(160px, 1fr) auto;
+  gap: 12px;
   align-items: center;
-  justify-content: space-between;
+  padding-block: 10px;
 }
 
 .title {
-  width: 10%;
+  font-weight: 700;
 }
 
 .searchBox {
-  width: 50%;
+  width: 100%;
+  min-width: 0;
+}
+
+.langBox {
+  justify-self: end;
+}
+
+@media (max-width: 520px) {
+  .toolbar {
+    grid-template-columns: 1fr auto;
+    grid-auto-rows: auto;
+  }
+  .title { grid-column: 1 / 2; }
+  .langBox { grid-column: 2 / 3; }
+  .searchBox { grid-column: 1 / -1; }
 }

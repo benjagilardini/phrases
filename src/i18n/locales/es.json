@@ -9,7 +9,7 @@
     "description": "La página que buscas no existe o fue movida. No te preocupes, podés volver al inicio.",
     "button": "Volver al inicio"
   },
-   "form": {
+  "form": {
     "title": "Nueva frase",
     "description": "Escribí una frase y guardala en tu colección.",
     "phraseLabel": "Frase",
@@ -17,9 +17,17 @@
     "authorPlaceholder": "Elegí un autor o escribí uno nuevo",
     "addButton": "Agregar frase",
     "clearButton": "Limpiar",
-    "me": "Yo"
+    "me": "Yo",
+    "expand": "Mostrar formulario",
+    "collapse": "Ocultar formulario"
   },
   "phrases": {
-    "empty": "Todavía no hay frases, ¡creá la primera!"
+    "empty": "Todavía no hay frases, ¡creá la primera!",
+    "emptyHint": "Usá el formulario para agregar tu primera frase.",
+    "noResults": "No hay resultados",
+    "tryClear": "Probá borrar el filtro o modificá tu búsqueda."
+  },
+  "filters": {
+    "clear": "Limpiar filtros"
   }
 }

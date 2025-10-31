@@ -36,7 +36,7 @@ export const PhrasesProvider: React.FC<PropsWithChildren> = ({ children }) => {
               ...(updates.text !== undefined ? { text: updates.text.trim() } : null),
               ...(updates.author !== undefined ? { author: updates.author.trim() || "Anónimo" } : null),
             }
-          : p
+          : phrase
       )
     );
   };
