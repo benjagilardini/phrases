@@ -4,7 +4,9 @@ import { phrasesMock } from "../mocks/phrasesMock";
 
 type PhrasesContextType = {
   phrases: Phrase[];
-  addPhrase: (text: string) => void;
+  addPhrase: (text: string, author?: string) => void;
+  updatePhrase: (id: string, updates: Partial<Pick<Phrase, "text" | "author">>) => void;
+  toggleFavorite: (id: string) => void;
   removePhrase: (id: string) => void;
   clearPhrases: () => void;
 };
@@ -14,9 +16,35 @@ const PhrasesContext = createContext<PhrasesContextType | null>(null);
 export const PhrasesProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const [phrases, setPhrases] = useState<Phrase[]>(phrasesMock);
 
-  const addPhrase = (text: string) => {
-    const newPhrase = { id: crypto.randomUUID(), text };
+  const addPhrase = (text: string, author = "Anónimo") => {
+    const newPhrase: Phrase = {
+      id: crypto.randomUUID(),
+      text: text.trim(),
+      author: author.trim() || "Anónimo",
+      createdAt: new Date().toISOString(),
+      favorite: false,
+    };
     setPhrases((prev) => [newPhrase, ...prev]);
+  };
+
+  const updatePhrase: PhrasesContextType["updatePhrase"] = (id, updates) => {
+    setPhrases((prev) =>
+      prev.map((phrase) =>
+        phrase.id === id
+          ? {
+              ...phrase,
+              ...(updates.text !== undefined ? { text: updates.text.trim() } : null),
+              ...(updates.author !== undefined ? { author: updates.author.trim() || "Anónimo" } : null),
+            }
+          : p
+      )
+    );
+  };
+
+  const toggleFavorite: PhrasesContextType["toggleFavorite"] = (id) => {
+    setPhrases((prev) =>
+      prev.map((phrase) => (phrase.id === id ? { ...phrase, favorite: !phrase.favorite } : phrase))
+    );
   };
 
   const removePhrase = (id: string) => {
@@ -30,6 +58,8 @@ export const PhrasesProvider: React.FC<PropsWithChildren> = ({ children }) => {
       value={{
         phrases,
         addPhrase,
+        updatePhrase,
+        toggleFavorite,
         removePhrase,
         clearPhrases,
       }}

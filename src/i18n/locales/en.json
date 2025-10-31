@@ -1,5 +1,5 @@
 {
-  "appTitle": "Phrases App",
+  "appTitle": "Phrases",
   "placeholder": "Search phrases",
   "footer": {
     "rights": "All rights reserved"
@@ -8,5 +8,18 @@
     "subtitle": "Oops! Looks like you're lost.",
     "description": "The page you’re looking for doesn’t exist or was moved. Don’t worry, you can go back home.",
     "button": "Go back home"
+  },
+  "form": {
+    "title": "New Phrase",
+    "description": "Write a phrase and save it to your collection.",
+    "phraseLabel": "Phrase",
+    "authorLabel": "Author",
+    "authorPlaceholder": "Pick an author or type a new one",
+    "addButton": "Add phrase",
+    "clearButton": "Clear",
+    "me": "Me"
+  },
+  "phrases": {
+    "empty": "There are no phrases yet — create your first one!"
   }
 }

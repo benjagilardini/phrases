@@ -1,5 +1,5 @@
 {
-  "appTitle": "Frases App",
+  "appTitle": "Frases",
   "placeholder": "Buscar frase",
   "footer": {
     "rights": "Todos los derechos reservados"
@@ -8,5 +8,18 @@
     "subtitle": "¡Ups! Parece que te perdiste.",
     "description": "La página que buscas no existe o fue movida. No te preocupes, podés volver al inicio.",
     "button": "Volver al inicio"
+  },
+   "form": {
+    "title": "Nueva frase",
+    "description": "Escribí una frase y guardala en tu colección.",
+    "phraseLabel": "Frase",
+    "authorLabel": "Autor",
+    "authorPlaceholder": "Elegí un autor o escribí uno nuevo",
+    "addButton": "Agregar frase",
+    "clearButton": "Limpiar",
+    "me": "Yo"
+  },
+  "phrases": {
+    "empty": "Todavía no hay frases, ¡creá la primera!"
   }
 }
